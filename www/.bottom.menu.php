@@ -1,0 +1,25 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Товары", 
+		"/tovary/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Войти", 
+		"/login/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Регистрация", 
+		"/register/", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>

@@ -1,9 +1,9 @@
 <? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetTitle("Товары"); ?>
-<?require_once($_SERVER['DOCUMENT_ROOT']. "/bitrix/modules/main/include/prolog_before.php");
-include('/home/bitrix/www/bitrix/templates/main/myIblocks/partners/create.php');
-include('/home/bitrix/www/bitrix/templates/main/myIblocks/tovars/create.php');
-include('/home/bitrix/www/bitrix/templates/main/myIblocks/functions/index.php');
+<?
+require_once($_SERVER['DOCUMENT_ROOT']. "/bitrix/modules/main/include/prolog_before.php");
+global $USER;
+if ($USER->IsAuthorized()) {
     $elemId=$_POST["id"];
     $action=$_POST["value"];
     if($action == "Активировать")
@@ -18,6 +18,10 @@ include('/home/bitrix/www/bitrix/templates/main/myIblocks/functions/index.php');
     	echo $res;
     else
     	echo "Не удалось обновить элемент";
-    //LocalRedirect("");
+}
+else
+{
+	echo "<script>alert(\"Доступ запрещен\");</script>";
+}
 ?>
 <? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
